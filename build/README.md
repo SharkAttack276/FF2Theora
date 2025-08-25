@@ -1,15 +1,20 @@
 # Build Scheme
 
-Each OSbuild has their one respective files: 
-- **build**
-- **ILbuild**
-- **globalSets**
-  
-To build, On terminal (root path): build\win\build or build\linux\build
+Each OS build has its own respective files:  
+- **build**  
+- **ILbuild**  
+- **globalSets**  
 
-Or, just open it using interface, NOTE that it MUST be called from their perspective path, (not the root path).
+To build, run the following in the terminal from the root path:  
+- Windows: `build\win\build`  
+- Linux: `build/linux/build`  
 
-## No bflat?
-Simple, download it from the windows package through terminal: winget install bflat
+Alternatively, you can open it using the interface. **Note:** It must be executed from its respective directory, not the root path.
 
-From linux, Download it from [here](https://github.com/bflattened/bflat). 
+## Missing bflat?
+
+- **Windows:** Install via terminal:  
+  ```bash
+  winget install bflat
+  ```
+- **Linux** download it from [here](https://github.com/bflattened/bflat)
