@@ -32,6 +32,7 @@ ff2theora decode -o - animation.theora | ffmpeg -i - frame.%d.jpg
 ffmpeg -i - frame.%d.jpg -f ogg - | ff2theora -o animation.theora -
 ```
 ### Flush per packet for large files:
+Process large files efficiently by flushing each packet immediately:
 ```bash
 ff2theora -f animation.ogg
 ```
@@ -51,4 +52,5 @@ FF2Theora includes several options that are particularly useful for game sprite 
 ## License
 
 FF2Theora is licensed under the **GNU General Public License v3.0 (GPL-3.0)**. See the [LICENSE](LICENSE) file for full details.
+
 
