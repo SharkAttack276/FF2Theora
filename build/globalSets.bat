@@ -12,6 +12,3 @@ set DIRECTORY_PATH=%ROOT_PATH%\%BUILD_TYPE%
 
 :: Output generated path
 set OUTPUT_PATH=%DIRECTORY_PATH%\%PROGRAM_NAME%
-
-:: Source files path
-set SOURCE_PATH=%ROOT_PATH%\SRC
