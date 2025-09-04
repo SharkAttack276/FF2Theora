@@ -83,7 +83,7 @@ public static class CommandVariants
             CopyrightAttend,
             OverwriteOption
         },
-        CommandMode.Decode => new Command("decode", "Remux FF2 format back to Ogg Theora") {
+        CommandMode.Demux => new Command("demux", "Remux FF2 format back to Ogg Theora") {
             InputFile,
             BufferSizeOption,
             OutputFile,
