@@ -41,7 +41,7 @@ public static class Program
             var Out = CommandContext.OutputFile ?? Path.ChangeExtension(CommandContext.InputFile, CommandContext.Mode switch
             {
                 CommandMode.Default => "theora",
-                CommandMode.Decode => "ogv",
+                CommandMode.Demux => "ogv",
                 _ => throw new NotImplementedException()
             });
             if (Out == CommandContext.InputFile && Out != "-")
