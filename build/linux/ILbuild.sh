@@ -16,8 +16,7 @@ source build/globalSets.sh
 BFLAT build-il \
   -r "$SHARED_PATH/System.CommandLine.dll" \
   -o "$OUTPUT_PATH" \
-  $OPTIMIZATIONS \
-  @"$SOURCE_PATH"
+  $OPTIMIZATIONS
 
 # Restore previous directory
 popd > /dev/null
