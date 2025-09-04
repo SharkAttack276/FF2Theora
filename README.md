@@ -20,12 +20,12 @@ The name **FF2Theora** comes from the game’s legacy format itself—it’s ess
 ### Quick Preview
 Stream a sprite animation directly to a player without temporary files:
 ```bash
-ff2theora decode -o - animation.theora | ffplay -
+ff2theora demux -o - animation.theora | ffplay -
 ```
 ### Quick Extraction
 Extract frames efficiently for editing or inspection:
 ```bash
-ff2theora decode -o - animation.theora | ffmpeg -i - frame.%d.jpg
+ff2theora demux -o - animation.theora | ffmpeg -i - frame.%d.jpg
 ```
 ### Direct Encode
 ```bash
