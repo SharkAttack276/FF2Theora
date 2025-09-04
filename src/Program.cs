@@ -21,12 +21,12 @@ public static class Program
     public static unsafe int Main(string[] Arguments)
     {
         RootCommand Root = (RootCommand)CommandVariants.Create(CommandMode.Default);
-        Command Decode = CommandVariants.Create(CommandMode.Decode);
+        Command Demux = CommandVariants.Create(CommandMode.Demux);
         CommandContext CommandContext = default;
         EnumeratorContext EnumeratorContext = default;
         Stream InStream = null, OutStream = null, PacketBuffer = null;
         Action? StreamActions = null;
-        Root.AddCommand(Decode);
+        Root.AddCommand(Demux);
         Action<InvocationContext> Setup = ctx =>
         {
             CommandContext = CommandParser.Parse(ctx);
@@ -114,7 +114,7 @@ public static class Program
                         CPacketRecord.PacketSize = EnumeratorContext.CurrentPageSize;
                         CPacketRecord.SerialNumber = PacketRecord.SerialNumber;
                         CPacketRecord.PacketNumber = EnumeratorContext.CurrentPageNumber;
-                        CPacketRecord.Granule = PacketRecord.Granule;
+                        CPacketRecord.Granule = PacketRecord.Granule != 0 ? PacketRecord.Granule++ : PacketRecord.Granule; // If the granule wasnt zero at the first place, then increment
                         PacketBuffer.Position = 0; // Reset the position of the stream to the beginning.
                         StreamActions?.Invoke();
                         // Start flush the payload data of the packet.
@@ -164,7 +164,7 @@ public static class Program
                 StreamActions = null;
             }
         });
-        Decode.SetHandler(ctx =>
+        Demux.SetHandler(ctx =>
         {
             try
             {
