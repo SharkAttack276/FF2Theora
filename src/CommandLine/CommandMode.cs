@@ -19,5 +19,5 @@ namespace FF2Theora.CommandLine;
 public enum CommandMode
 {
     Default,
-    Decode
+    Demux
 }
