@@ -29,7 +29,7 @@ ff2theora demux -o - animation.theora | ffmpeg -i - frame.%d.jpg
 ```
 ### Direct Encode
 ```bash
-ffmpeg -i - frame.%d.jpg -f ogg - | ff2theora -o animation.theora -
+ffmpeg -i frame.%d.jpg -f ogg - | ff2theora -o animation.theora -
 ```
 ### Flush per packet for large files:
 Process large files efficiently by flushing each packet immediately:
@@ -39,6 +39,10 @@ ff2theora -f animation.ogg
 ### Remux and fix a corrupted Ogg (Requires seeking)
 ```bash
 ff2theora -F animation.ogg
+```
+### Real time debugging
+```bash
+ff2theora -d 1000 -l -o - video.ogg > nul
 ```
 ## Advanced Options
 
